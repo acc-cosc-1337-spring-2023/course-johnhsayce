@@ -1,16 +1,36 @@
-//write include statements
+//include statements
 
-//write using statements
+#include<iostream>
+#include<iomanip>
+#include <string>
+
+//using statements
+using std::cout;
+using std::cin;
+using std::endl;
 
 
-/*
-Write code that prompts user to enter 1 for Get GC Content, 
-or 2 for Get DNA Complement.  The program will prompt user for a 
-DNA string and call either get gc content or get dna complement
-function and display the result. Program runs as long as 
-user enters a y or Y.
-*/
+//prototype functions
+int factorial(int num);
+int gcd(int num1, int num2);
+
 int main() 
 {
+	int sum;
+	int num;
+	cout<<"Enter Factorial entry "<< endl;
+	cin>> num;
+	cout<<"The number entered is "<< num <<"\n";
+	sum = factorial(num);
+	cout<<"The factorial of "<< num<< "  is "<< sum<<"\n";
+	
+
+	int hi_com_fact;
+	int num1, num2;
+	cout<<"Enter the numbers to determine the highest common denominator "<< endl;
+	cin>> num1>>num2;
+	cout<<"The numbers entered are "<< num1 <<" and "<<num2<<"\n";
+	hi_com_fact = gcd(num1, num2);
+	cout<<"The highest common denominator for "<< num1<< " and "<< num2 <<" is "<< hi_com_fact <<"\n";
 	return 0;
 }
