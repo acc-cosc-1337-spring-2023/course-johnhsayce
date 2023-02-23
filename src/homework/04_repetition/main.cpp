@@ -54,9 +54,9 @@ int main()
 					cin>>check;
 					if (check =="Y" || check == "y")
 					return 0;}
-					else
-					cout<<" Enter Menu entry "<< endl;
-					cin>>menu_select;
+					else if(true)
+					{cout<<" Enter Menu entry "<< endl;
+					cin>>menu_select;}
 	}		
 			while(menu_select>= 1 || menu_select<=3);	
 	return 0;
