@@ -50,13 +50,13 @@ int main()
 				else if (menu_select ==3)
 				{ std::string check;
 					cout<<"Are you sure you want to exit"<<endl;
-					cout<<"Type Y or y if you want to exit or Type menu item "<<endl;
+					cout<<"Type Y or y if you want to exit or type N or n to etrun to the main menu  "<<endl;
 					cin>>check;
 					if (check =="Y" || check == "y")
-					return 0;}
-					else if(true)
-					{cout<<" Enter Menu entry "<< endl;
-					cin>>menu_select;}
+					{return 0;}
+					if (check =="N" || check == "n")
+					menu_select=1;
+				}
 	}		
 			while(menu_select>= 1 || menu_select<=3);	
 	return 0;
