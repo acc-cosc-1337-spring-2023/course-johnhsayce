@@ -17,6 +17,8 @@ int gcd(int num1, int num2);
 int main() 
 {
 	int menu_select;
+	do
+	{
 	cout<<" Enter Menu entry "<< endl;
 	cout<<"--------------------------"<<endl;
 	cout<<" ----------Menu-----------"<<endl;
@@ -24,7 +26,6 @@ int main()
 	cout<<" Enter 2 =  Generate Highest Common Denominator  "<<endl;
 	cout<<" Enter 3 =  Exit Menu "<<endl;
 	cin>> menu_select;
-	
 	
 		if(menu_select == 1)
 		{
@@ -47,6 +48,16 @@ int main()
 			cout<<"The highest common denominator for "<< num1<< " and "<< num2 <<" is "<< hi_com_fact <<"\n";		
 			}
 				else if (menu_select ==3)
-				
+				{ std::string check;
+					cout<<"Are you sure you want to exit"<<endl;
+					cout<<"Type Y or y if you want to exit or Type menu item "<<endl;
+					cin>>check;
+					if (check =="Y" || check == "y")
+					return 0;}
+					else
+					cout<<" Enter Menu entry "<< endl;
+					cin>>menu_select;
+	}		
+			while(menu_select>= 1 || menu_select<=3);	
 	return 0;
 }
