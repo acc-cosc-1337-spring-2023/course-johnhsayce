@@ -14,6 +14,9 @@ using std::endl;
 int factorial(int num);
 int gcd(int num1, int num2);
 
+// main function which performs a do-while for menu
+//the do-while has embedded if -else statements for calls of 
+// functions of factorial and greastest common denominator
 int main() 
 {
 	int menu_select;
@@ -35,14 +38,17 @@ int main()
 		cin>> num;
 		cout<<"The number entered is "<< num <<"\n";
 		sum = factorial(num);
-		cout<<"The factorial of "<< num<< "  is "<< sum<<"\n";
+		cout<<"The factorial of "<< num<< " is "<< sum<<"\n";
 		}
-			else if(menu_select == 2 )
+			else if(menu_select == 2)
 			{
 			int hi_com_fact;
 			int num1, num2;
 			cout<<"Enter the numbers to determine the highest common denominator "<< endl;
-			cin>> num1>>num2;
+			cout<<"Enter the 1st number"<< endl;
+			cin>>num1;
+			cout<<"Enter the 2nd number"<< endl;
+			cin>>num2;
 			cout<<"The numbers entered are "<< num1 <<" and "<<num2<<"\n";
 			hi_com_fact = gcd(num1, num2);
 			cout<<"The highest common denominator for "<< num1<< " and "<< num2 <<" is "<< hi_com_fact <<"\n";		
