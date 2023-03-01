@@ -11,11 +11,12 @@ std::string reverse_string(std:: string dna);
 int main() 
 {
 	string dna;
+	int count;
 	cout<<"Get DNA input from keyboard"<<endl;
 	cin>>dna;
 	cout<<"DNA entry is "<<dna<<endl;
-	get_gc_content(dna);
-
+	count =get_gc_content(dna);
+	cout<<"DNA entry GC count "<<count<<endl;
 
 	return 0;
 }
