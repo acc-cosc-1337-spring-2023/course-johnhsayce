@@ -1,3 +1,13 @@
 //add include statements
+#include"func.h"
+#include<string>
+#include <iomanip>
 
-//add function code here
+//get gc_content fucntion
+double get_gc_content(const std::string &dna)
+{
+int num;
+getline(const std::string &dna);
+
+
+}
