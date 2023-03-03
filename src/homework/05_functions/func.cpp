@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <vector>
 #include <cstring>
-#include <sstream>
+
 using std::string, std::cout, std::cin, std::endl;
 
 //get menu function
@@ -38,6 +38,7 @@ string rev_complement;
 	      cin>>dna;
          cout<<"DNA entry is "<<dna<<endl;
          rev_complement =get_dna_complement(dna);
+         cout<<"Reverse Complement of DNA Entry is  "<<rev_complement<<endl;
          }
             else if (menu_select ==3)
 				   { std::string check;
@@ -89,7 +90,9 @@ int num = dna.size();
    //cout << dna_copy << '\n';
 
 //Function to reverse the dna_copy array[] from start to end
+ 
  int start = 0;
+ std::string dva_rev;
  int end=dna.size();
     while (start < end)
     {
@@ -99,30 +102,54 @@ int num = dna.size();
         start++;
         end--;
     }
-      cout<<"reverse of DNA character string is ";
+      cout<<"Reverse of DNA character string(using for loop) is ";
       for (int i = 0; i <= num; i++)
       {cout << dna_copy[i];
       }
+      std::string dna_rev( dna_copy );
+      cout<< "Print out dna_rev variable"<<dna_rev; 
    cout << endl;
-   string dna_reversed = dna_copy;
-   cout<<"DNA string Object(reversed)"<<dna_reversed;
-return dna_reversed;
-
+   
+return dna_rev;
 }
+// FUNCTION CALL of reverse complement
 std::string get_dna_complement(std::string dna) 
 {
-   dna=reverse_string(dna);
-   int n = dna.length();
-   cout<<" print dna length after get dna complement call"<<n;
-   cout<<"Relook at dna character string after call of reverse string is ";
+  //std::string dna_rev = reverse_string(dna);
+   //int n = dna_rev.length();
+  // cout<<"Print dna length after get dna complement call"<<n<<endl;
+   /*cout<<"Relook at dna character string after call of reverse string is ";
       for (int i = 0; i <= n; i++)
       {
          cout << dna[i];
-      }
+      }*/
+int num = dna.size();
+//Use the following method to get dna string into character string 
+   char dna_copy[dna.size() + 1];
+   strcpy(dna_copy, dna.c_str());
+   //cout<<"Char array copy of dna string\n";
+   //cout << dna_copy << '\n';
 
-   string result = dna; // create string of same length
+//Function to reverse the dna_copy array[] from start to end
+ 
+ int start = 0;
+ std::string dva_rev;
+ int end=dna.size();
+    while (start < end)
+    {
+        int temp = dna_copy[start];
+        dna_copy[start] = dna_copy[end];
+        dna_copy[end] = temp;
+        start++;
+        end--;
+    }
+      cout<<"Reverse of DNA character string(using for loop) is ";
+      for (int i = 0; i <= num; i++)
+      {cout << dna_copy[i];
+      }
+   string result = dna_copy; // create string of same length
    
-   for (int i=0; i<n; i++) 
+   for (int i=0; i<num; i++) 
    {
       if (dna[i] == 'C')
          result[i] = 'G';
@@ -134,7 +161,7 @@ std::string get_dna_complement(std::string dna)
          result[i] = 'A';
    }
    cout<<"Complement of DNA character string is ";
-      for (int i = 0; i <= n; i++)
+      for (int i = 0; i <= num; i++)
       {
          cout << result[i];
       }

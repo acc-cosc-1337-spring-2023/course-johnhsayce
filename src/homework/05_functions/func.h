@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-
-
+#include <vector>
+#include <cstring>
 
 //function(s) prototype here
 double get_gc_content(const std::string &dna);
