@@ -3,15 +3,61 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include<vector>
-#include<cstring>
+#include <vector>
+#include <cstring>
+#include <sstream>
 using std::string, std::cout, std::cin, std::endl;
+
+//get menu function
+std::string menu(int menu_select)
+{
+string dna;
+double count;
+string rev_complement;
+	do
+	{
+	cout<<" Enter Menu entry "<< endl;
+	cout<<"--------------------------"<<endl;
+	cout<<" ----------Menu-----------"<<endl;
+	cout<<" Enter 1 =  Get GC content "<<endl;
+	cout<<" Enter 2 =  Get DNA Complement  "<<endl;
+	cout<<" Enter 3 =  Exit Menu "<<endl;
+	cin>> menu_select;
+	
+		if(menu_select == 1)
+      {
+      cout<<"Get DNA input from keyboard"<<endl;
+	   cin>>dna;
+      cout<<"DNA entry is "<<dna<<endl;
+	   count =get_gc_content(dna);
+      cout<<"DNA entry GC percentage of total "<<count<<endl;
+      }
+			else if(menu_select == 2)
+			{
+         cout<<"Get DNA input from keyboard"<<endl;
+	      cin>>dna;
+         cout<<"DNA entry is "<<dna<<endl;
+         rev_complement =get_dna_complement(dna);
+         }
+            else if (menu_select ==3)
+				   { std::string check;
+					   cout<<"Are you sure you want to exit"<<endl;
+					   cout<<"Type Y or y if you want to exit or type N or n to return to the main menu  "<<endl;
+					   cin>>check;
+					   if (check =="Y" || check == "y")
+                  menu_select = 4;
+					      if (check =="N" || check == "n")
+					      menu_select=1;
+               }
+   }
+   while(menu_select>= 1 || menu_select<=3);	
+	return 0;
+}
 
 //get gc_content function
 double get_gc_content(const std::string &dna)
 {
 double count =0;
-//cout<<"Again DNA input from keyboard equal "<<dna<<endl;
 int num = dna.size();
 cout<<"Size of string equal "<<num<<endl;
    for ( unsigned int i=0; i<dna.length(); ++i)
@@ -34,6 +80,7 @@ cout<<endl;
 // get dna reverse of initial dna string
 std::string reverse_string(std:: string dna)
 {
+cout<<" DNA string as it looks entering gc function is"<<dna<<endl;
 int num = dna.size();
 //Use the following method to get dna string into character string 
    char dna_copy[dna.size() + 1];
@@ -57,8 +104,10 @@ int num = dna.size();
       {cout << dna_copy[i];
       }
    cout << endl;
+   string dna_reversed = dna_copy;
+   cout<<"DNA string Object(reversed)"<<dna_reversed;
+return dna_reversed;
 
-return dna_copy;
 }
 std::string get_dna_complement(std::string dna) 
 {
