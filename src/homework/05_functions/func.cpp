@@ -9,7 +9,7 @@
 using std::string, std::cout, std::cin, std::endl;
 
 //get menu function
-std::string menu(int menu_select)
+void menu(int menu_select)
 {
 string dna;
 double count;
@@ -50,8 +50,8 @@ string rev_complement;
 					      menu_select=1;
                }
    }
-   while(menu_select>= 1 || menu_select<=3);	
-	return 0;
+   while(menu_select>= 1 && menu_select<=3);	
+	
 }
 
 //get gc_content function

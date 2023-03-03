@@ -8,7 +8,7 @@ using std::string, std::cout, std::cin, std::endl;
 double get_gc_content(const std::string &dna);
 std::string get_dna_complement(std::string dna);
 std::string reverse_string(std:: string dna);
-std::string menu(int menu_select);
+void menu(int menu_select);
 
 
 int main() 
