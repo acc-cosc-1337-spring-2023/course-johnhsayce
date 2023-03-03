@@ -4,6 +4,7 @@
 #include <string>
 #include <iomanip>
 #include<vector>
+#include<cstring>
 using std::string, std::cout, std::cin, std::endl;
 
 //get gc_content function
@@ -27,8 +28,48 @@ for (unsigned i=0; i<dna.length(); ++i)
                 count+=1;
             }
   }
+double percent_total =count/num;
 cout<<endl;
-    return count;
+    return percent_total;
 }
+// get dna reverse of initial dna string
+std::string reverse_string(std:: string dna)
+{
+int num = dna.size();
+char dna_reverse[dna.size() + 1];
 
+cout<<"Size of string equal "<<num<<endl;
+   char dna_copy[dna.size() + 1];
+   strcpy(dna_copy, dna.c_str());
+   cout<<"Char array copy of dna string\n";
+   cout << dna_copy << '\n';
+  
+cout<<" Using loop character method the reverse string contains "<<endl;
+    for(int i = (strlen(dna_copy) - 1); i >= 0; i--)
+         {
+           cout << dna_copy[i];
+              for(int index =0; index<num; index++) 
+              {
+              dna_reverse[index] = dna_copy[i];
+              }
+        }
+    cout<<endl;
+    return dna_reverse;
+}
+/*std::string get_dna_complement(std::string dna) 
+{
 
+   string result = dna; // create string of same length
+   int n = dna.length();
+   for (int i=0; i<n; i++) {
+      if (dna[i] == 'C')
+         result[i] = 'G';
+      else if (dna[i] == 'G')
+         result[i] = 'C';
+      else if (dna[i] == 'A')
+         result[i] = 'T';
+      else if (dna[i] == 'T')
+         result[i] = 'A';
+   }
+   return result;*/
+ 
