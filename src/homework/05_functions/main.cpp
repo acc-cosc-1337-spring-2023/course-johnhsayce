@@ -14,7 +14,8 @@ int main()
 	string dna;
 	double count;
 	string reverse_dna;
-	string dna_rev_compl;
+	
+
 	cout<<"Get DNA input from keyboard"<<endl;
 	cin>>dna;
 	cout<<"DNA entry is "<<dna<<endl;
@@ -22,5 +23,6 @@ int main()
 	cout<<"DNA entry GC percentage of total "<<count<<endl;
 	reverse_dna=reverse_string(dna);
 	cout<<"DNA reverse string is "<<reverse_dna<<endl;
+	get_dna_complement(dna);
 	return 0;
 }
