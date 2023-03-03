@@ -2,6 +2,7 @@
 #include<iostream>
 #include<iomanip>
 #include<string>
+#include<vector>
 using std::string, std::cout, std::cin, std::endl;
 //prototype functions
 double get_gc_content(const std::string &dna);
