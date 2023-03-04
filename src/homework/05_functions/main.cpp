@@ -22,9 +22,5 @@ int main()
 	
 	menu(menu_select);
 
-	/*
-	reverse_dna=reverse_string(dna);
-	cout<<"DNA reverse string is "<<reverse_dna<<endl;
-	get_dna_complement(dna);*/
 	return 0;
 }
