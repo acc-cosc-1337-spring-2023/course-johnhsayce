@@ -40,6 +40,7 @@ string rev_complement;
 	         cin>>dna;
             cout<<"DNA entry is "<<dna<<endl;
             reverse_dna =reverse_string(dna);
+            cout<< "Reverse DNA from menu function"<<reverse_dna<<endl;
          }
 			   else if(menu_select == 3)
 			   {
@@ -94,8 +95,9 @@ int num = dna.size();
    char dna_copy[dna.size() + 1];
    strcpy(dna_copy, dna.c_str());
 //Function to reverse the dna_copy array[] from start to end
+ 
  int start = 0;
- std::string dva_rev;
+ std::string dna_rev;
  int end=dna.size();
     while (start < end)
     {
@@ -109,7 +111,6 @@ int num = dna.size();
       for (int i = 0; i <= num; i++)
       {cout << dna_copy[i];
       }
-      std::string dna_rev( dna_copy );
       
    cout << endl;
    

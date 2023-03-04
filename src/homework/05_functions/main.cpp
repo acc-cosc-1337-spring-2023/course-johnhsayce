@@ -1,8 +1,8 @@
 //program which gets DNA data and  processes it a specifc way
-#include<iostream>
-#include<iomanip>
-#include<string>
-#include<vector>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
 #include <cstring>
 using std::string, std::cout, std::cin, std::endl;
 
