@@ -40,7 +40,7 @@ string rev_complement;
 	         cin>>dna;
             cout<<"DNA entry is "<<dna<<endl;
             reverse_dna =reverse_string(dna);
-            cout<< "Reverse DNA from menu function"<<reverse_dna<<endl;
+            cout<< "Reverse DNA from menu function equals "<<reverse_dna<<endl;
          }
 			   else if(menu_select == 3)
 			   {
@@ -48,6 +48,7 @@ string rev_complement;
 	         cin>>dna;
             cout<<"DNA entry is "<<dna<<endl;
             rev_complement =get_dna_complement(dna);
+            cout<< "Reverse Complement of the DNA from menu function equals "<<rev_complement<<endl;
             }
                else if (menu_select ==4)
 				      { std::string check;
@@ -110,8 +111,10 @@ int num = dna.size();
       cout<<"Reverse of DNA character string(using for loop) is ";
       for (int i = 0; i <= num; i++)
       {cout << dna_copy[i];
+      dna_rev.append(1,dna_copy[i]);
       }
-      
+      cout<<endl;
+      cout<<"dna_rev using append equal "<<dna_rev<<endl;
    cout << endl;
    
 return dna_rev;
@@ -119,6 +122,7 @@ return dna_rev;
 // FUNCTION CALL of reverse complement
 std::string get_dna_complement(std::string dna) 
 {
+string new_rev_complement;
 int num = dna.size();
 //Use the following method to get dna string into character string 
    char dna_copy[dna.size() + 1];
@@ -158,7 +162,10 @@ int num = dna.size();
       for (int i = 0; i <= num+1; i++)
       {
          cout << result[i];
+         new_rev_complement.append(1,result[i]);
       }
       cout<<endl;
-   return result;
+      cout<<"Reverse complement as a string in function is "<<new_rev_complement<<endl;
+      cout<<endl;
+   return new_rev_complement;
 }
