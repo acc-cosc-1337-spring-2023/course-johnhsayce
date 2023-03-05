@@ -32,7 +32,7 @@ string rev_complement;
 	   cin>>dna;
       cout<<"DNA entry is "<<dna<<endl;
 	   count =get_gc_content(dna);
-      cout<<"DNA entry GC percentage of total "<<count<<endl;
+      cout<<"DNA entry GC percentage of total "<<count<<" X 100"<<endl;
       }
          else if(menu_select == 2)
 			{
@@ -40,7 +40,7 @@ string rev_complement;
 	         cin>>dna;
             cout<<"DNA entry is "<<dna<<endl;
             reverse_dna =reverse_string(dna);
-            cout<< "Reverse DNA from menu function equals "<<reverse_dna<<endl;
+            cout<< "Reverse of the DNA string equals "<<reverse_dna<<endl;
          }
 			   else if(menu_select == 3)
 			   {
@@ -48,7 +48,7 @@ string rev_complement;
 	         cin>>dna;
             cout<<"DNA entry is "<<dna<<endl;
             rev_complement =get_dna_complement(dna);
-            cout<< "Reverse Complement of the DNA from menu function equals "<<rev_complement<<endl;
+            cout<< "Reverse Complement of the DNA string equals "<<rev_complement<<endl;
             }
                else if (menu_select ==4)
 				      { std::string check;
@@ -83,8 +83,7 @@ cout<<"Size of string equal "<<num<<endl;
             }
   }
 double percent_total =count/num;
-cout<<endl;
-    return percent_total;
+return percent_total;
 }
 // END of GC content function
 
@@ -99,7 +98,7 @@ int num = dna.size();
  
  int start = 0;
  std::string dna_rev;
- int end=dna.size();
+ int end=dna.size()-1;
     while (start < end)
     {
         int temp = dna_copy[start];
@@ -108,15 +107,11 @@ int num = dna.size();
         start++;
         end--;
     }
-      cout<<"Reverse of DNA character string(using for loop) is ";
-      for (int i = 0; i <= num; i++)
-      {cout << dna_copy[i];
+      for (int i = 0; i < num; i++)
+      {//cout << dna_copy[i];
       dna_rev.append(1,dna_copy[i]);
       }
-      cout<<endl;
-      cout<<"dna_rev using append equal "<<dna_rev<<endl;
-   cout << endl;
-   
+     
 return dna_rev;
 }
 // FUNCTION CALL of reverse complement
@@ -131,7 +126,7 @@ int num = dna.size();
 //Function to reverse the dna_copy array[] from start to end
  
  int start = 0;
- int end=dna.size();
+ int end=dna.size()-1;
     while (start < end)
     {
         int temp = dna_copy[start];
@@ -140,14 +135,10 @@ int num = dna.size();
         start++;
         end--;
     }
-      cout<<"Reverse of DNA character string(using for loop) is ";
-      for (int i = 0; i <num+1; i++)
-      {cout << dna_copy[i];
-      }
-      cout<<endl;
+      
    string result;// = dna_copy; // create string of same length
    
-   for (int i=0; i<num+1; i++) 
+   for (int i=0; i<num; i++) 
    {
       if (dna_copy[i] == 'C')
          result[i] = 'G';
@@ -158,14 +149,10 @@ int num = dna.size();
       else if (dna_copy[i] == 'T')
          result[i] = 'A';
    }
-   cout<<"Complement of DNA character string is ";
-      for (int i = 0; i <= num+1; i++)
+      for (int i = 0; i < num; i++)
       {
-         cout << result[i];
          new_rev_complement.append(1,result[i]);
       }
-      cout<<endl;
-      cout<<"Reverse complement as a string in function is "<<new_rev_complement<<endl;
-      cout<<endl;
+      
    return new_rev_complement;
 }

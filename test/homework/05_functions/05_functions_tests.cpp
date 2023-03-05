@@ -18,6 +18,6 @@ TEST_CASE("Verify reverse string content")
 }
 TEST_CASE("Verify reverse complement string content") 
 {
-	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT[");
-	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG[");
+	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
+	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
 }
