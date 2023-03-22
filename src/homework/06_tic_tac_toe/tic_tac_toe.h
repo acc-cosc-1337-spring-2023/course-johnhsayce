@@ -6,6 +6,8 @@
 //using std::string, std::vector;
 using namespace std;
 
+#ifndef TICTACTOE_H
+#define TICTACTOE_H
 
 class TicTacToe
 
@@ -30,3 +32,4 @@ void display_board();
 
 
 };
+#endif
