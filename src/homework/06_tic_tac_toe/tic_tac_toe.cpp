@@ -11,48 +11,56 @@ using namespace std;
 bool TicTacToe::game_over()
 {
 return check_board_full();
-
 }
 
-void TicTacToe::start_game(string)
+void TicTacToe::start_game(string first_player)
 {
-
+cout<<"first Player entered was an "<< first_player<<endl;
+player=first_player;
+clear_board();
 }
 
-void TicTacToe::mark_board(int)
+void TicTacToe::mark_board(int position)
 {
-
+pegs[position -1] = player;
+set_next_player();
 }
 
 string TicTacToe::get_player()
 {
-
-return "";
+return player;
 }
 
 void TicTacToe::display_board()
 {
 int i;
-for(i=0;i<3;i++)
-{
-cout<<pegs[i]<<"|";
-}
-cout<<endl;
-for(i=3;i<6;i++)
-{
-cout<<pegs[i]<<"|";
-}
-cout<<endl;
-for(i=6;i<9;i++)
-{
-cout<<pegs[i]<<"|";
-}
-cout<<endl;
+    for(i=0;i<3;i++)
+    {
+    cout<<pegs[i]<<"|";
+    }
+    cout<<endl;
+        for(i=3;i<6;i++)
+        {
+        cout<<pegs[i]<<"|";
+        }
+        cout<<endl;
+            for(i=6;i<9;i++)
+            {
+            cout<<pegs[i]<<"|";
+            }
+            cout<<endl;
 }
 
 void TicTacToe::set_next_player()
 {
-
+    if (player=="X")
+    {
+    player="O";
+    }
+        else
+        {
+        player="X";   
+        }
 }
 
 bool TicTacToe::check_board_full()
@@ -66,13 +74,12 @@ for(i=0;i<9;i++)
     index+=1;
     }       
 }
-if(index>1)
-{
-return false;   
+        if(index>=1)
+        {
+        return false;   
+        }
+        return true;
 }
-return true;
-}
-
 
 void TicTacToe::clear_board()
 {
