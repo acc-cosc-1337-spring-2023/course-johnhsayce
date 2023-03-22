@@ -11,5 +11,7 @@ using namespace std;
 int main() 
 {
 
+TicTacToe game1;
+game1.display_board();
 	return 0;
 }

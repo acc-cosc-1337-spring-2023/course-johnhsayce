@@ -19,11 +19,11 @@ void set_next_player();
 bool check_board_full();
 void clear_board();
 string player;
-vector<string> pegs{"","","","","","","","",""};
+vector<string> pegs{" "," "," "," "," "," "," "," "," "};
 
 
 public:
-TicTacToe();
+
 bool game_over();
 void start_game(string);
 void mark_board(int);
