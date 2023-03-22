@@ -10,8 +10,8 @@ using namespace std;
 
 bool TicTacToe::game_over()
 {
+return check_board_full();
 
-return false;
 }
 
 void TicTacToe::start_game(string)
@@ -48,20 +48,33 @@ for(i=6;i<9;i++)
 cout<<pegs[i]<<"|";
 }
 cout<<endl;
-
-
 }
 
 void TicTacToe::set_next_player()
 {
 
 }
+
 bool TicTacToe::check_board_full()
 {
-return false;
+int i=0;
+int index=0;
+for(i=0;i<9;i++)
+{
+    if(pegs[i]==" ")
+    {
+    index+=1;
+    }       
 }
+if(index>1)
+{
+return false;   
+}
+return true;
+}
+
 
 void TicTacToe::clear_board()
 {
-    
+vector<string> pegs{" "," "," "," "," "," "," "," "," "};  
 }
