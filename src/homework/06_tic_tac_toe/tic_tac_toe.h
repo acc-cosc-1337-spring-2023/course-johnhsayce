@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <vector>
 #include <cstring>
-//using std::string, std::vector;
+using std::string, std::vector;
 using namespace std;
 
 #ifndef TICTACTOE_H
@@ -20,7 +20,7 @@ bool check_board_full();
 void clear_board();
 string player;
 vector<string> pegs{" "," "," "," "," "," "," "," "," "};
-
+//vector<string> pegs{"X","O","X","O","X","O","X","O","X"};
 
 public:
 
