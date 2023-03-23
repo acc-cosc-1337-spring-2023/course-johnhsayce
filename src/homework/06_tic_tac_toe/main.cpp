@@ -10,6 +10,7 @@ using namespace std;
 
 int main() 
 {
+
 bool gover;
 string first_player;
 int position;
@@ -19,6 +20,7 @@ TicTacToe game1;
 
 cout<<"Enter an X or an O for initial player"<<endl;
 cin>>first_player;
+
 game1.start_game(first_player);
 for(index=1;9;index++)
 {
