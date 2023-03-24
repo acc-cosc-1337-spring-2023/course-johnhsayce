@@ -5,8 +5,8 @@
 #include <cstring>
 #include"tic_tac_toe.h"
 
-//using std::string, std::vector;
-using namespace std;
+using std::string, std::vector,std::cin, std::cout;
+//using namespace std;
 
 bool TicTacToe::game_over()
 {
@@ -28,6 +28,8 @@ set_next_player();
 
 string TicTacToe::get_player()
 {
+cout<<"Enter an X or an O for initial player"<<endl;
+cin>>player;
 return player;
 }
 
