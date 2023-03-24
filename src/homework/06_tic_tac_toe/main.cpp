@@ -35,8 +35,6 @@ gover = game1.game_over();
 	return 0;	
 	}
 }
-//gover = game1.game_over();
-//cout<<" Game Over "<<gover<<endl;
 
 return 0;
 }
