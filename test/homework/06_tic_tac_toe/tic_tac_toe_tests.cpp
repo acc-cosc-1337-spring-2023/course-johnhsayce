@@ -2,15 +2,14 @@
 #include "catch.hpp"
 #include"tic_tac_toe.h"
 
-
+TicTacToe game1;
 TEST_CASE("Verify Test Configuration", "verification")
 {
 	REQUIRE(true == true);
 }
 TEST_CASE("Game Over function")
  {
-	TicTacToe game1;
-
+	
 	game1.mark_board(1);
 	REQUIRE(game1.game_over() == false);
 
