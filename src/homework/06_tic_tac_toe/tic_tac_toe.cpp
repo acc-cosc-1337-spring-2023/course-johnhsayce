@@ -36,16 +36,19 @@ return player;
 void TicTacToe::display_board()
 {
 int i;
+  cout<<"|";  
     for(i=0;i<3;i++)
     {
     cout<<pegs[i]<<"|";
     }
     cout<<endl;
+    cout<<"|";
         for(i=3;i<6;i++)
         {
         cout<<pegs[i]<<"|";
         }
         cout<<endl;
+        cout<<"|";
             for(i=6;i<9;i++)
             {
             cout<<pegs[i]<<"|";
