@@ -10,6 +10,7 @@ using std::string, std::vector,std::cin, std::cout;
 
 bool TicTacToe::game_over()
 {
+
 return check_board_full();
 }
 
@@ -83,6 +84,7 @@ for(i=0;i<9;i++)
         {
         return false;   
         }
+        clear_board(); //added to clear board
         return true;
 }
 
