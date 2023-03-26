@@ -27,9 +27,11 @@ game1.display_board();
 //for(index=1;9;index++)
 while(gover==false)
 {
-cout<<"Enter position from 1 thru 9 :";
+cout<<"Enter position from 1 thru 9"<<endl;
+cout<<"(Program will exit if any other character is entered)  :";
 cin>>position;
-if( position<=1 && position >9) // added check on integer between 1 and 9
+ //valdiation check for integers(>9) and strings or char inputs
+if (!(cin && (position>0 && position<10)))
 {
 return 0;	
 }
