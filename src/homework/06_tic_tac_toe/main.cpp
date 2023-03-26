@@ -16,10 +16,11 @@ int position;
 //int index;
 char ch;
 gover=false;
-TicTacToe game1;
+
 ch = 'Y';
-while(ch=='Y'|| ch=='y' ) 
+while(ch=='Y'|| ch=='y' ) // loop runs umtil told to exit
 {
+TicTacToe game1;
 first_player=game1.get_player();  // asks for 1st player type X or O
 game1.start_game(first_player);	// starts play with 1st player choice
 game1.display_board(); 
@@ -28,20 +29,20 @@ while(gover==false)
 {
 cout<<"Enter position from 1 thru 9 :";
 cin>>position;
+if( position<=1 && position >9) // added check on integer between 1 and 9
+{
+return 0;	
+}
 game1.mark_board(position);  // Marks position on game board
 game1.display_board();   // Displays overall game board spaces and X's and o's marked
-gover = game1.game_over();   //checks for gane_over is true
-	/*if (gover==true)		// if gover is true displays Gme Over
-	{
-	cout<<"Game Over"<<endl;
+gover = game1.game_over();   //checks for game_over is true
 
-	}*/
 }
 cout<<"Game Over"<<endl;
 cout<<"ENTER Y or y to CONTINUE , or enter any other value to exit"<<endl;
 gover=false;
 	cin>>ch;
-		if (ch != 'Y')
+		if (!(ch == 'Y'||ch =='y'))
 		{
 			return 0;
 		}

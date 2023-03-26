@@ -29,7 +29,7 @@ set_next_player();
 
 string TicTacToe::get_player()
 {
-cout<<"Enter an X or an O for initial player"<<endl;
+cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>player;
 return player;
 }
@@ -84,7 +84,6 @@ for(i=0;i<9;i++)
         {
         return false;   
         }
-        clear_board(); //added to clear board
         return true;
 }
 
