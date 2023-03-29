@@ -134,6 +134,13 @@ string TicTacToe::get_player()
 {
 cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>player;
+if (((player!="X")&&(player!="O")) ||(cin.fail()))
+{
+    cout<<"Inavlid character entered\n";
+    cout<<"Please, Enter a capital X or an capital O for initial player\n";
+    cin>>player;
+    return player;
+}
 return player;
 }
 
