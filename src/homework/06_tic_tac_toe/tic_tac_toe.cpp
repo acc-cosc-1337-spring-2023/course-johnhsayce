@@ -10,7 +10,21 @@ using std::string, std::vector,std::cin, std::cout;
 
 bool TicTacToe::game_over()
 {
-
+bool win_row =check_row_win();
+    if (win_row ==true)
+    {
+      return true;  
+    }
+bool win_col =check_col_win();
+    if (win_col ==true)
+    {
+      return true;  
+    }
+bool win_diag =check_diag_win();
+    if (win_diag ==true)
+    {
+      return true;  
+    }
 return check_board_full();
 }
 
@@ -26,6 +40,87 @@ void TicTacToe::mark_board(int position)
 pegs[position -1] = player;
 set_next_player();
 }
+
+bool TicTacToe::check_row_win()
+{
+    if(((pegs[0]=="X") && (pegs[1] =="X") && (pegs[2] == "X"))||((pegs[0]=="O") && (pegs[1] =="O") && (pegs[2] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+    if(((pegs[3]=="X") && (pegs[4] =="X") && (pegs[5] == "X"))||((pegs[3]=="O") && (pegs[4] =="O") && (pegs[5] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+    if(((pegs[6]=="X") && (pegs[7] =="X") && (pegs[8] == "X"))||((pegs[6]=="O") && (pegs[7] =="O") && (pegs[8] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+return false;
+}
+
+bool TicTacToe::check_col_win()
+{
+    if(((pegs[0]=="X") && (pegs[3] =="X") && (pegs[6] == "X"))||((pegs[0]=="O") && (pegs[3] =="O") && (pegs[6] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+    if(((pegs[1]=="X") && (pegs[4] =="X") && (pegs[7] == "X"))||((pegs[1]=="O") && (pegs[4] =="O") && (pegs[7] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+    if(((pegs[2]=="X") && (pegs[5] =="X") && (pegs[8] == "X"))||((pegs[2]=="O") && (pegs[5] =="O") && (pegs[8] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+return false;
+}
+
+bool TicTacToe::check_diag_win()
+{
+    if(((pegs[0]=="X") && (pegs[4] =="X") && (pegs[8] == "X"))||((pegs[0]=="O") && (pegs[4] =="O") && (pegs[8] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+    if(((pegs[2]=="X") && (pegs[4] =="X") && (pegs[6] == "X"))||((pegs[2]=="O") && (pegs[4] =="O") && (pegs[6] == "O")) )
+    {
+    set_winner();
+    cout<<"There is a Winner! :"<<winner<<endl;
+    return true;
+    }
+return false;
+}
+
+
+
+void TicTacToe::set_winner()
+{
+    if (player=="X")
+    {
+    player="O";
+    }
+        else
+        {
+        player="X";   
+        }
+winner=player;
+
+}
+
+
 
 string TicTacToe::get_player()
 {
