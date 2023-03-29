@@ -25,6 +25,11 @@ bool win_diag =check_diag_win();
     {
       return true;  
     }
+if(check_board_full()==true)
+{
+winner = "C";
+cout<<"Game Tied"<<endl;
+}
 return check_board_full();
 }
 
@@ -119,7 +124,10 @@ void TicTacToe::set_winner()
 winner=player;
 
 }
-
+string TicTacToe::get_winner()
+{
+return winner;
+}
 
 
 string TicTacToe::get_player()
