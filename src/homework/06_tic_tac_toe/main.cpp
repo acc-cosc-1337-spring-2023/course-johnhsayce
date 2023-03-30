@@ -32,6 +32,7 @@ while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
 
 //first_player=game1.get_player();  // asks for 1st player type X or O
 game1.start_game(first_player);	// starts play with 1st player choice
+cout<<"First Player entered was an "<< game1.get_player()<<endl;
 game1.display_board(); 
 //for(index=1;9;index++)
 while(gover==false)
@@ -47,7 +48,7 @@ return 0;
 game1.mark_board(position);  // Marks position on game board
 game1.display_board();   // Displays overall game board spaces and X's and o's marked
 gover = game1.game_over();   //checks for game_over is true
-cout<<"Next player is :"<<game1.get_player()<<endl;
+
 }
 cout<<"Game Over"<<endl;
 cout<<"ENTER Y or y to CONTINUE , or enter any other value to exit"<<endl;

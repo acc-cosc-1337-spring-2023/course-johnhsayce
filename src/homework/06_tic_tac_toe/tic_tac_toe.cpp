@@ -29,13 +29,14 @@ if(check_board_full()==true)
 {
 winner = "C";
 cout<<"Game Tied"<<endl;
+cout<<"No winner(X or O), the value stored in Winner = "<<winner<<endl;
 }
 return check_board_full();
 }
 
 void TicTacToe::start_game(string first_player)
 {
-cout<<"first Player entered was an "<< first_player<<endl;
+//cout<<"first Player entered was an "<< first_player<<endl;
 player=first_player;
 clear_board();
 }
