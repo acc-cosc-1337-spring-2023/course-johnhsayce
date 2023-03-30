@@ -132,7 +132,7 @@ return winner;
 
 string TicTacToe::get_player()
 {
-cout<<"Enter a capital X or an capital O for initial player"<<endl;
+/*cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>player;
 if (((player!="X")&&(player!="O")) ||(cin.fail()))
 {
@@ -140,7 +140,7 @@ if (((player!="X")&&(player!="O")) ||(cin.fail()))
     cout<<"Please, Enter a capital X or an capital O for initial player\n";
     cin>>player;
     return player;
-}
+}*/
 return player;
 }
 

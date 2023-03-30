@@ -32,7 +32,7 @@ string get_winner();  // new proto fct check for win
 void start_game(string);
 void mark_board(int);
 string get_player();
-void display_board();
+void display_board ();
 
 
 };
