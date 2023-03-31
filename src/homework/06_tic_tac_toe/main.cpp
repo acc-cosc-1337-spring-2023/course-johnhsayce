@@ -12,10 +12,10 @@ int main()
 {
 bool gover;  // game over variable
 string first_player;
-int position;
+int position; //peg postion
 //int index;
-char ch;
-gover=false;
+char ch;  // use for looping program
+gover=false; // initial value for game over variable
 
 ch = 'Y';
 while(ch=='Y'|| ch=='y' ) // loop runs umtil told to exit
@@ -37,8 +37,9 @@ game1.display_board();
 //for(index=1;9;index++)
 while(gover==false)
 {
-cout<<"Enter position from 1 thru 9"<<endl;
-cout<<"(Program will exit if any other character is entered)  :";
+cout<<"Enter position from 1 thru 9, for Player "<<game1.get_player()<<endl;
+cout<<"(PROGRAM will EXIT, if any other character is entered)"<<endl;
+cout<<"Must be a number from 1-9, indicating grid position :"<<endl;
 cin>>position;
  //valdiation check for integers(>9) and strings or char inputs
 if (!(cin && (position>0 && position<10)))
