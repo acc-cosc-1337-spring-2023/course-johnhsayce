@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <vector>
 #include <cstring>
+#include <memory>
 #include"tic_tac_toe.h"
 
 using std::string, std::vector,std::cin, std::cout;

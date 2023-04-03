@@ -3,6 +3,8 @@
 #include <iomanip>
 #include <vector>
 #include <cstring>
+#include <memory>
+#include<stdlib.h>
 using std::string, std::vector;
 using namespace std;
 
@@ -12,7 +14,8 @@ using namespace std;
 class TicTacToe
 
 {
-
+friend ostream &operator<<(ostream &out, const TicTacToe &games);
+friend istream &operator>>(istream &in, const TicTacToe &games);
 
 private:
 void set_next_player();

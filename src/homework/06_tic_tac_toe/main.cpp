@@ -4,12 +4,15 @@
 #include <vector>
 #include <cstring>
 #include"tic_tac_toe.h"
+#include"tic_tac_toe_manager.h"
 
 using std::string, std::vector,std::cin, std::cout;
 
 
 int main() 
 {
+TicTacToeManager manage1;  // define class object for TTT manager
+
 bool gover;  // game over variable
 string first_player;
 int position; //peg postion
