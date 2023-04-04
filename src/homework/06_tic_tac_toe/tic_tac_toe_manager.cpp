@@ -4,35 +4,36 @@
 #include <vector>
 #include <cstring>
 #include <memory>
-using std::string, std::vector,std::cin, std::cout;
+using std::string, std::vector, std::cin, std::cout;
 using namespace std;
 
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe.h"
 
-int x_win =0; int o_win =0; int ties =0;
+//int x_win =0; int o_win =0; int ties =0;
 
-void TicTacToeManager:: save_game(TicTacToe game1)
+
+
+void TicTacToeManager:: save_game(TicTacToe game)
 {
-string winner = game1.get_winner();
-update_winner_count(winner,game1);
-games.push_back(game1);
-
+update_winner_count(game.get_winner());
+cout<<"Winner of the game per save game fuction ="<<game.get_winner()<<endl;
+games.push_back(game);
+get_winner_total(x_win,o_win,ties);
 }
 
 
-void TicTacToeManager::update_winner_count(string winner, TicTacToe game1)
-{
- string winner= game1.get_winner();
- if (winner =="X") 
-    {x_win+=1; }
-    if (winner =="O")
-    {o_win+=1; }
-        if (winner =="C")
-        {ties+=1; }
+void TicTacToeManager::update_winner_count(string winner )
+{ string winner2 = winner;
+    if (winner2 =="X")
+     {x_win+=1; }
+            if (winner2 =="O")
+            {o_win+=1; }
+                if (winner2 =="C")
+                {ties+=1; }
 }
 
-void TicTacToeManager::get_winner_total()
+void TicTacToeManager::get_winner_total(int &,int &, int &)
 {
-
+cout<<"W wins = "<< x_win<<" "<< "O wins = "<<o_win<<" "<<"Ties = "<<ties<<endl;
 }

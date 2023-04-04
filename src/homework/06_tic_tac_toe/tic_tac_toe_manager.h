@@ -14,14 +14,14 @@ class TicTacToeManager
 
 {
 private:
-void update_winner_count(string, TicTacToe game1);
+void update_winner_count(string);
 int x_win;
 int o_win;
 int ties;
 vector<TicTacToe>games;
 
 public:
-void get_winner_total();
+void get_winner_total(int&,int&,int&);
 void save_game(TicTacToe game1);
 };
 #endif

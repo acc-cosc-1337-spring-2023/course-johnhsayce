@@ -11,7 +11,7 @@ using std::string, std::vector,std::cin, std::cout;
 
 int main() 
 {
-TicTacToeManager manage1;  // define class object for TTT manager
+TicTacToeManager manage;  // define class object for TTT manager
 
 bool gover;  // game over variable
 string first_player;
@@ -23,7 +23,7 @@ gover=false; // initial value for game over variable
 ch = 'Y';
 while(ch=='Y'|| ch=='y' ) // loop runs umtil told to exit
 {
-TicTacToe game1;
+TicTacToe game;
 cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>first_player;
 while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
@@ -34,13 +34,13 @@ while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
 }
 
 //first_player=game1.get_player();  // asks for 1st player type X or O
-game1.start_game(first_player);	// starts play with 1st player choice
-cout<<"First Player entered was an "<< game1.get_player()<<endl;
-game1.display_board(); 
+game.start_game(first_player);	// starts play with 1st player choice
+cout<<"First Player entered was an "<< game.get_player()<<endl;
+game.display_board(); 
 //for(index=1;9;index++)
 while(gover==false)
 {
-cout<<"Enter position from 1 thru 9, for Player "<<game1.get_player()<<endl;
+cout<<"Enter position from 1 thru 9, for Player "<<game.get_player()<<endl;
 cout<<"(PROGRAM will EXIT, if any other character is entered)"<<endl;
 cout<<"Must be a number from 1-9, indicating grid position :"<<endl;
 cin>>position;
@@ -49,10 +49,10 @@ if (!(cin && (position>0 && position<10)))
 {
 return 0;	
 }
-game1.mark_board(position);  // Marks position on game board
-game1.display_board();   // Displays overall game board spaces and X's and o's marked
-gover = game1.game_over();   //checks for game_over is true
-
+game.mark_board(position);  // Marks position on game board
+game.display_board();   // Displays overall game board spaces and X's and o's marked
+gover = game.game_over();   //checks for game_over is true
+manage.save_game(game);
 }
 cout<<"Game Over"<<endl;
 cout<<"ENTER Y or y to CONTINUE , or enter any other value to exit"<<endl;
