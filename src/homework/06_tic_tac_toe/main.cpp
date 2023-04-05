@@ -7,7 +7,7 @@
 #include"tic_tac_toe_manager.h"
 
 using std::string, std::vector,std::cin, std::cout;
-
+using namespace std;
 
 int main() 
 {
@@ -16,7 +16,7 @@ TicTacToeManager manage;  // define class object for TTT manager
 bool gover;  // game over variable
 string first_player;
 int position; //peg postion
-//int index;
+
 char ch;  // use for looping program
 gover=false; // initial value for game over variable
 
@@ -36,13 +36,12 @@ while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
 //first_player=game1.get_player();  // asks for 1st player type X or O
 game.start_game(first_player);	// starts play with 1st player choice
 cout<<"First Player entered was an "<< game.get_player()<<endl;
-game.display_board(); 
-//for(index=1;9;index++)
+cout<<game;  //display board using overloaded operatorin tictactoe class
+
 while(gover==false)
 {
-cout<<"Enter position from 1 thru 9, for Player "<<game.get_player()<<endl;
+cout<<"Enter grid position (1 thru 9), for Player "<<game.get_player()<<endl;
 cout<<"(PROGRAM will EXIT, if any other character is entered)"<<endl;
-cout<<"Must be a number from 1-9, indicating grid position :"<<endl;
 cin>>position;
  //valdiation check for integers(>9) and strings or char inputs
 if (!(cin && (position>0 && position<10)))
@@ -50,16 +49,19 @@ if (!(cin && (position>0 && position<10)))
 return 0;	
 }
 game.mark_board(position);  // Marks position on game board
-game.display_board();   // Displays overall game board spaces and X's and o's marked
+cout<<game; //displays overall game bboard spaces and X's and o's marke, using overloaded operator tictactoe
+
 gover = game.game_over();   //checks for game_over is true
 manage.save_game(game);
 }
 cout<<"Game Over"<<endl;
+
 cout<<"ENTER Y or y to CONTINUE , or enter any other value to exit"<<endl;
 gover=false;
 	cin>>ch;
 		if (!(ch == 'Y'||ch =='y'))
 		{
+			cout<<manage;
 			return 0;
 		}
 }

@@ -134,19 +134,10 @@ return winner;
 
 string TicTacToe::get_player()
 {
-/*cout<<"Enter a capital X or an capital O for initial player"<<endl;
-cin>>player;
-if (((player!="X")&&(player!="O")) ||(cin.fail()))
-{
-    cout<<"Inavlid character entered\n";
-    cout<<"Please, Enter a capital X or an capital O for initial player\n";
-    cin>>player;
-    return player;
-}*/
 return player;
 }
 
-void TicTacToe::display_board()
+/*void TicTacToe::display_board()
 {
 int i;
   cout<<"|";  
@@ -167,7 +158,7 @@ int i;
             cout<<pegs[i]<<"|";
             }
             cout<<endl;
-}
+}*/
 
 void TicTacToe::set_next_player()
 {

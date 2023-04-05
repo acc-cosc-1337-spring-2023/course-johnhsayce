@@ -14,8 +14,35 @@ using namespace std;
 class TicTacToe
 
 {
-friend ostream &operator<<(ostream &out, const TicTacToe &games);
-friend istream &operator>>(istream &in, const TicTacToe &games);
+
+friend ostream &operator<<(ostream &out, const TicTacToe &game)
+{
+   int i;
+  cout<<"|";  
+    for(i=0;i<3;i++)
+    {
+    cout<<game.pegs[i]<<"|";
+    }
+    cout<<endl;
+    cout<<"|";
+        for(i=3;i<6;i++)
+        {
+        cout<<game.pegs[i]<<"|";
+        }
+        cout<<endl;
+        cout<<"|";
+            for(i=6;i<9;i++)
+            {
+            cout<<game.pegs[i]<<"|";
+            }
+            cout<<endl; 
+    
+    return out;
+}
+friend istream &operator>>(istream &in, const TicTacToe &game)
+{
+    return in;
+}
 
 private:
 void set_next_player();
@@ -35,7 +62,7 @@ string get_winner();  // new proto fct check for win
 void start_game(string);
 void mark_board(int);
 string get_player();
-void display_board ();
+//void display_board ();
 
 
 };

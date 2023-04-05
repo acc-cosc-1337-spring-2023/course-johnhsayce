@@ -13,6 +13,20 @@ using namespace std;
 class TicTacToeManager
 
 {
+friend ostream& operator<<(ostream& out, const TicTacToeManager& manage)
+    {
+        out<<"-Final Game History Summary-"<<endl;
+        for( auto obj : manage.games)
+        {
+           out<<obj<<"\n"; 
+        }
+        out<<"Game summary win History"<<endl;
+        out<<"W wins :>>> "<<manage.x_win<<endl;
+        out<<"O wins :>>> "<<manage.o_win<<endl;
+        out<<"Ties   :>>> "<<manage.ties<<endl;
+        return out;
+    }
+
 private:
 void update_winner_count(string);
 int x_win;
@@ -23,5 +37,7 @@ vector<TicTacToe>games;
 public:
 void get_winner_total(int&,int&,int&);
 void save_game(TicTacToe game1);
+
+
 };
 #endif

@@ -17,11 +17,9 @@ using namespace std;
 void TicTacToeManager:: save_game(TicTacToe game)
 {
 update_winner_count(game.get_winner());
-cout<<"Winner of the game per save game fuction ="<<game.get_winner()<<endl;
 games.push_back(game);
 get_winner_total(x_win,o_win,ties);
 }
-
 
 void TicTacToeManager::update_winner_count(string winner )
 { string winner2 = winner;
@@ -35,5 +33,6 @@ void TicTacToeManager::update_winner_count(string winner )
 
 void TicTacToeManager::get_winner_total(int &,int &, int &)
 {
-cout<<"W wins = "<< x_win<<" "<< "O wins = "<<o_win<<" "<<"Ties = "<<ties<<endl;
+cout<<"Win Tally :: ";
+cout<<"W wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
 }
