@@ -31,8 +31,12 @@ void TicTacToeManager::update_winner_count(string winner )
                 {ties+=1; }
 }
 
-void TicTacToeManager::get_winner_total(int &,int &, int &)
+void TicTacToeManager::get_winner_total(int &x,int &o, int &t)
 {
+x=x_win;
+o=o_win;
+t=ties;
+
 cout<<"Win Tally :: ";
 cout<<"W wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
 }
