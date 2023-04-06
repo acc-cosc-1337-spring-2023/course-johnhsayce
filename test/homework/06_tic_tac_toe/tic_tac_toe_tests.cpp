@@ -9,14 +9,47 @@ TEST_CASE("Verify Test Configuration", "verification")
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Tests correct win total for get winner total X")
+TEST_CASE("Tests correct win total history")
  {
 	TicTacToeManager manage;
-	string player = "X";
+	
+	string player = "X";		//game1 X wins
 	TicTacToe game;
 	game.start_game(player);
+	game.mark_board(1);
+	game.mark_board(2);
+	game.mark_board(5);
+	game.mark_board(4);
+	game.mark_board(9);
+
+	string player = "O";		//game2 O wins
+	TicTacToe game;
+	game.start_game(player);
+	game.mark_board(1);
+	game.mark_board(2);
+	game.mark_board(5);
+	game.mark_board(4);
+	game.mark_board(9);
+
+	string player = "X";		//game3 tie
+	TicTacToe game;
+	game.start_game(player);
+	game.mark_board(1);
+	game.mark_board(2);
+	game.mark_board(3);
+	game.mark_board(4);
+	game.mark_board(6);
+	game.mark_board(7);
+	game.mark_board(8);
+	game.mark_board(9);
+	game.mark_board(5);
+
 	manage.save_game(game);
 	REQUIRE(game.get_player() == "X");
+
+
+
+
  }
 
 
