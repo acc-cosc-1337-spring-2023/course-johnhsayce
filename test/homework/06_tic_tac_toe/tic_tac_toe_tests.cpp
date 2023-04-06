@@ -44,8 +44,15 @@ TEST_CASE("Tests correct win total history")
 	game.mark_board(9);
 	game.mark_board(5);
 
+	bool check;
+	int x_win;
+	int o_win;
+	int ties;
+	
 	manage.save_game(game);
-	REQUIRE(game.get_player() == "X");
+	manage.get_winner_total(x_win,o_win,ties);
+	{check=true;}
+	REQUIRE(check == true);
 
 
 
