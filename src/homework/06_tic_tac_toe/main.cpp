@@ -52,7 +52,11 @@ game.mark_board(position);  // Marks position on game board
 cout<<game; //displays overall game bboard spaces and X's and o's marke, using overloaded operator tictactoe
 
 gover = game.game_over();   //checks for game_over is true
+
 manage.save_game(game);
+int x; int o; int t;
+manage.get_winner_total(x,o,t);
+cout<<"Winners Tally :: W wins ="<<x<< "  O wins ="<<o << "  Ties ="<<t<<endl;
 }
 cout<<"Game Over"<<endl;
 

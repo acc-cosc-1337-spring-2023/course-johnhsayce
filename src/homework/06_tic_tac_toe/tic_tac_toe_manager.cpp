@@ -37,6 +37,6 @@ x=x_win;
 o=o_win;
 t=ties;
 
-cout<<"Win Tally :: ";
-cout<<"W wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
+//cout<<"Win Tally :: ";
+//cout<<"W wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
 }
