@@ -9,9 +9,57 @@ TEST_CASE("Verify Test Configuration", "verification")
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Tests correct win total history")
+TEST_CASE("Tests correct win total history using manage.game winner totals")
  {
-	//TicTacToeManager manage;
+	TicTacToeManager manage;
+	bool check;
+	
+	string x_o;
+	
+	//game1 X wins
+	TicTacToe game;
+	x_o="X";
+	game.start_game(x_o);
+	game.mark_board(1);
+	game.mark_board(2);
+	game.mark_board(5);
+	game.mark_board(4);
+	game.mark_board(9);
+
+    //game2 O wins
+	x_o="O";
+	game.start_game("O");
+	game.mark_board(1);
+	game.mark_board(2);
+	game.mark_board(5);
+	game.mark_board(4);
+	game.mark_board(9);
+
+	//game3 tie
+	x_o="X";
+	game.start_game(x_o);
+	game.mark_board(1);
+	game.mark_board(2);
+	game.mark_board(3);
+	game.mark_board(4);
+	game.mark_board(6);
+	game.mark_board(7);
+	game.mark_board(8);
+	game.mark_board(9);
+	game.mark_board(5);
+
+manage.save_game(game);
+int x; int o; int t;
+manage.get_winner_total(x,o,t);
+
+if((x =1) && (o=1)&&(t=1))
+{check =true;}
+	
+	REQUIRE(check == true);
+ }
+
+TEST_CASE("Tests correct win total history using TicTacToe class only")
+ {
 	bool check;
 	int x_win_test= 0;
 	int o_win_test=0;
@@ -70,13 +118,11 @@ if(game.get_winner() =="X")
 		{o_win_test= o_win_test+1;}
 		if(game.get_winner() =="C")
 			{ties_test= ties_test+1;}
-//manage.save_game(game);
+
 	if((x_win_test =1) && (o_win_test=1)&&(ties_test=1))
 	{check =true;}
-	//manage.save_game(game);
-	
-	REQUIRE(check == true);
 
+	REQUIRE(check == true);
  }
 
 TEST_CASE("Tests first player is set to  X")
