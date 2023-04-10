@@ -14,5 +14,35 @@ using namespace std;
 
 class TicTacToe_3: public TicTacToe
 {
+friend ostream &operator<<(ostream &out, const TicTacToe &game)
+{
+   int i;
+  cout<<"|";  
+    for(i=0;i<3;i++)
+    {
+    cout<<game.pegs[i]<<"|";
+    }
+    cout<<endl;
+    cout<<"|";
+        for(i=3;i<6;i++)
+        {
+        cout<<game.pegs[i]<<"|";
+        }
+        cout<<endl;
+        cout<<"|";
+            for(i=6;i<9;i++)
+            {
+            cout<<game.pegs[i]<<"|";
+            }
+            cout<<endl; 
+    
+    return out;
+}
+friend istream &operator>>(istream &in, const TicTacToe &game)
+{
+    return in;
+}
+
+
 };
 #endif
