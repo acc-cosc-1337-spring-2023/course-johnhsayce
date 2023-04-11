@@ -47,21 +47,24 @@ friend istream &operator>>(istream &in, const TicTacToe &game)
 private:
 void set_next_player();
 bool check_board_full();
-bool check_row_win();  // new proto fct check for win
-bool check_col_win();   // new proto fct check for win
-bool check_diag_win();   // new proto fct check for win
 void clear_board();
 void set_winner();  // new proto fct check for win
 string player;
 string winner;  // new string var for winner
-vector<string> pegs{" "," "," "," "," "," "," "," "," "};
+
+protected:
+vector<string> pegs{};
+bool virtual check_row_win();  // new proto fct check for win
+bool virtual check_col_win();   // new proto fct check for win
+bool virtual check_diag_win();   // new proto fct check for win
 
 public:
+TicTacToe(int);
 bool game_over();
 string get_winner();  // new proto fct check for win
 void start_game(string);
 void mark_board(int);
-string get_player();
+string virtual get_player() =0;
 //void display_board ();
 
 

@@ -47,6 +47,7 @@ friend istream &operator>>(istream &in, const TicTacToe &game)
 {
     return in;
 }
+TicTacToe_4():TicTacToe(4){}  //contructor which passes 4 to the base and initializes
 
 };
 #endif

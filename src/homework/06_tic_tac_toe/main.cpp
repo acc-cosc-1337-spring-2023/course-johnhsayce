@@ -5,6 +5,7 @@
 #include <cstring>
 #include"tic_tac_toe.h"
 #include"tic_tac_toe_manager.h"
+#include"tic_tac_toe_3.h"
 
 using std::string, std::vector,std::cin, std::cout;
 using namespace std;
@@ -23,7 +24,15 @@ gover=false; // initial value for game over variable
 ch = 'Y';
 while(ch=='Y'|| ch=='y' ) // loop runs umtil told to exit
 {
-TicTacToe game;
+int s; // grid size
+cout<<" Enter the type of tic tac toe game you would like \n";
+cout<<" Type 3 for a 3 x 3 grid, or 4 for a 4 X 4 grid \n";
+cin>>s;
+if(s == 3)
+{
+
+
+TicTacToe_3 game;
 cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>first_player;
 while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
@@ -68,6 +77,7 @@ gover=false;
 			cout<<manage;
 			return 0;
 		}
+}
 }
 return 0;
 }
