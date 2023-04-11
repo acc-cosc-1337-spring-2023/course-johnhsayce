@@ -8,7 +8,7 @@ using std::string, std::vector,std::cin, std::cout;
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe.h"
 
-bool TicTacToe::check_row_win()
+bool TicTacToe_3::check_row_win()
 {
     if(((pegs[0]=="X") && (pegs[1] =="X") && (pegs[2] == "X"))||((pegs[0]=="O") && (pegs[1] =="O") && (pegs[2] == "O")) )
     {
@@ -31,7 +31,7 @@ bool TicTacToe::check_row_win()
 return false;
 }
 
-bool TicTacToe::check_col_win()
+bool TicTacToe_3::check_col_win()
 {
     if(((pegs[0]=="X") && (pegs[3] =="X") && (pegs[6] == "X"))||((pegs[0]=="O") && (pegs[3] =="O") && (pegs[6] == "O")) )
     {
@@ -54,7 +54,7 @@ bool TicTacToe::check_col_win()
 return false;
 }
 
-bool TicTacToe::check_diag_win()
+bool TicTacToe_3::check_diag_win()
 {
     if(((pegs[0]=="X") && (pegs[4] =="X") && (pegs[8] == "X"))||((pegs[0]=="O") && (pegs[4] =="O") && (pegs[8] == "O")) )
     {
@@ -70,7 +70,7 @@ bool TicTacToe::check_diag_win()
     }
 return false;
 }
-string TicTacToe::get_player()
+string TicTacToe_3::get_player()
 {
 return player;
 }

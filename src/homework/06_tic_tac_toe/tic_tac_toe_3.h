@@ -45,10 +45,10 @@ friend istream &operator>>(istream &in, const TicTacToe_3 &game)
 public:
 TicTacToe_3():TicTacToe(3){}  //contructor which passes 3 to the base and initializes
 private:
-bool check_row_win{TicTacToe::check_row_win()};  // new proto fct check for win
-bool check_col_win{TicTacToe::check_col_win()};   // new proto fct check for win
-bool check_diag_win{TicTacToe::check_diag_win()};   // new proto fct check for win
-string get_player{TicTacToe::get_player()};
+bool check_row_win();  // new proto fct check for win
+bool check_col_win();   // new proto fct check for win
+bool check_diag_win();   // new proto fct check for win
+string get_player();
 
 };
 #endif
