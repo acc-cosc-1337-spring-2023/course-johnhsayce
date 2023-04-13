@@ -16,10 +16,10 @@ using namespace std;
 
 
 
-void TicTacToeManager:: save_game(TicTacToe_4 game)
+void TicTacToeManager:: save_game(unique_ptr<TicTacToe>&game)
 {
-update_winner_count(game.get_winner());
-games.push_back(game);
+update_winner_count(game->get_winner());
+games.push_back(std::move(game));
 get_winner_total(x_win,o_win,ties);
 }
 

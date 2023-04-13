@@ -18,9 +18,9 @@ class TicTacToeManager
 friend ostream& operator<<(ostream& out, const TicTacToeManager& manage)
     {
         out<<"-Final Game History Summary-"<<endl;
-        for( auto obj : manage.games)
+        for( auto &obj : manage.games)
         {
-           out<<obj<<"\n"; 
+           out<<*obj<<"\n"; 
         }
         out<<"Game summary win History"<<endl;
         out<<"W wins :>>> "<<manage.x_win<<endl;
@@ -34,11 +34,12 @@ void update_winner_count(string);
 int x_win;
 int o_win;
 int ties;
-vector<TicTacToe>games;
+//vector<TicTacToe>games;
+vector<unique_ptr<TicTacToe>> games;
 
 public:
 void get_winner_total(int&,int&,int&);
-void save_game(TicTacToe_4 game1);
+void save_game(unique_ptr<TicTacToe>&);
 
 
 };

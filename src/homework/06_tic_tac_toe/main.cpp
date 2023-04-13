@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <vector>
+#include<memory>
 #include <cstring>
 #include"tic_tac_toe.h"
 #include"tic_tac_toe_manager.h"
