@@ -32,10 +32,11 @@ cout<<" Type 3 for a 3 x 3 grid, or 4 for a 4 X 4 grid \n";
 cin>>s;
 if(s == 4)
 {
-TicTacToe_4 game;
+unique_ptr<TicTacToe>&game{};
+TicTacToe_4 &game;
 
 int grid=3;
- int &s= grid;
+int &s= grid;
 cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>first_player;
 while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
@@ -59,10 +60,11 @@ if (!(cin && (position>0 && position<17)))
 {
 return 0;	
 }
-game.mark_board(position);  // Marks position on game board
+game->mark_board(position);  // Marks position on game board
 cout<<game; //displays overall game bboard spaces and X's and o's marke, using overloaded operator tictactoe
 
-gover = game.game_over(s);   //checks for game_over is true
+gover = game->game_over(s);   //checks for game_over is true
+
 
 manage.save_game(game);
 int x; int o; int t;
