@@ -50,11 +50,11 @@ cout<<game;  //display board using overloaded operatorin tictactoe class
 
 while(gover==false)
 {
-cout<<"Enter grid position (1 thru 9), for Player "<<game.get_player()<<endl;
+cout<<"Enter grid position (1 thru 16), for Player "<<game.get_player()<<endl;
 cout<<"(PROGRAM will EXIT, if any other character is entered)"<<endl;
 cin>>position;
- //valdiation check for integers(>9) and strings or char inputs
-if (!(cin && (position>0 && position<10)))
+ //valdiation check for integers(>16) and strings or char inputs
+if (!(cin && (position>0 && position<17)))
 {
 return 0;	
 }
