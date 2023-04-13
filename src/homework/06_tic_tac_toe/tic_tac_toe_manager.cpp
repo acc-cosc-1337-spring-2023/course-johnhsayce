@@ -10,12 +10,13 @@ using namespace std;
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 //int x_win =0; int o_win =0; int ties =0;
 
 
 
-void TicTacToeManager:: save_game(TicTacToe_3 game)
+void TicTacToeManager:: save_game(TicTacToe_4 game)
 {
 update_winner_count(game.get_winner());
 games.push_back(game);

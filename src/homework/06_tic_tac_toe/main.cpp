@@ -29,9 +29,9 @@ int s; // grid size
 cout<<" Enter the type of tic tac toe game you would like \n";
 cout<<" Type 3 for a 3 x 3 grid, or 4 for a 4 X 4 grid \n";
 cin>>s;
-if(s == 3)
+if(s == 4)
 {
-TicTacToe_3 game;
+TicTacToe_4 game;
 
 int grid=3;
  int &s= grid;

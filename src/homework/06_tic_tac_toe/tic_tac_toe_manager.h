@@ -6,6 +6,7 @@
 #include <memory>
 #include"tic_tac_toe.h"
 #include "tic_tac_toe_3.h"
+#include"tic_tac_toe_4.h"
 using std::string, std::vector;
 using namespace std;
 
@@ -37,7 +38,7 @@ vector<TicTacToe>games;
 
 public:
 void get_winner_total(int&,int&,int&);
-void save_game(TicTacToe_3 game1);
+void save_game(TicTacToe_4 game1);
 
 
 };
