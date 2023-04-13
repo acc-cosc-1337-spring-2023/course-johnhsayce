@@ -6,6 +6,7 @@
 #include"tic_tac_toe.h"
 #include"tic_tac_toe_manager.h"
 #include"tic_tac_toe_3.h"
+#include"tic_tac_toe_4.h"
 
 using std::string, std::vector,std::cin, std::cout;
 using namespace std;
@@ -30,9 +31,10 @@ cout<<" Type 3 for a 3 x 3 grid, or 4 for a 4 X 4 grid \n";
 cin>>s;
 if(s == 3)
 {
-
-
 TicTacToe_3 game;
+
+int grid=3;
+ int &s= grid;
 cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>first_player;
 while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
@@ -42,7 +44,6 @@ while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
     cin>>first_player;
 }
 
-//first_player=game1.get_player();  // asks for 1st player type X or O
 game.start_game(first_player);	// starts play with 1st player choice
 cout<<"First Player entered was an "<< game.get_player()<<endl;
 cout<<game;  //display board using overloaded operatorin tictactoe class
@@ -60,7 +61,7 @@ return 0;
 game.mark_board(position);  // Marks position on game board
 cout<<game; //displays overall game bboard spaces and X's and o's marke, using overloaded operator tictactoe
 
-gover = game.game_over();   //checks for game_over is true
+gover = game.game_over(s);   //checks for game_over is true
 
 manage.save_game(game);
 int x; int o; int t;
@@ -77,6 +78,11 @@ gover=false;
 			cout<<manage;
 			return 0;
 		}
+}
+
+else
+{
+cout<<" Grid was not marked 3\n";
 }
 }
 return 0;

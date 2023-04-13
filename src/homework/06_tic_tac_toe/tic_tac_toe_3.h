@@ -48,7 +48,6 @@ private:
 bool check_row_win();  // new proto fct check for win
 bool check_col_win();   // new proto fct check for win
 bool check_diag_win();   // new proto fct check for win
-string get_player();
 
 };
 #endif

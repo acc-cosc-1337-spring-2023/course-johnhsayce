@@ -9,12 +9,13 @@ using namespace std;
 
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
 
 //int x_win =0; int o_win =0; int ties =0;
 
 
 
-void TicTacToeManager:: save_game(TicTacToe game)
+void TicTacToeManager:: save_game(TicTacToe_3 game)
 {
 update_winner_count(game.get_winner());
 games.push_back(game);
@@ -37,6 +38,6 @@ x=x_win;
 o=o_win;
 t=ties;
 
-//cout<<"Win Tally :: ";
-//cout<<"W wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
+cout<<"Win Tally :: ";
+cout<<"W wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
 }

@@ -11,7 +11,7 @@ using std::string, std::vector,std::cin, std::cout;
 
 TicTacToe::TicTacToe(int s):pegs(s*s," "){}  //defined constructor
 
-bool TicTacToe::game_over()
+bool TicTacToe::game_over(int&s)
 {
 bool win_row =check_row_win();
     if (win_row ==true)
@@ -28,20 +28,20 @@ bool win_diag =check_diag_win();
     {
       return true;  
     }
-if(check_board_full()==true)
+if(check_board_full(s)==true)
 {
 winner = "C";
 cout<<"Game Tied"<<endl;
 cout<<"No winner(X or O), the value stored in Winner = "<<winner<<endl;
 }
-return check_board_full();
+return check_board_full(s);
 }
 
 void TicTacToe::start_game(string first_player)
 {
 //cout<<"first Player entered was an "<< first_player<<endl;
 player=first_player;
-clear_board();
+clear_board(s);
 }
 
 void TicTacToe::mark_board(int position)
@@ -174,11 +174,12 @@ void TicTacToe::set_next_player()
         }
 }
 
-bool TicTacToe::check_board_full()
+bool TicTacToe::check_board_full(int&s)
 {
 int i=0;
+int x=s;
 int index=0;
-for(i=0;i<9;i++)
+for(i=0;i<x*x;i++)
 {
     if(pegs[i]==" ")
     {
@@ -192,7 +193,15 @@ for(i=0;i<9;i++)
         return true;
 }
 
-void TicTacToe::clear_board()
+void TicTacToe::clear_board(int&s)
 {
-vector<string> pegs{" "," "," "," "," "," "," "," "," "};  
+int x =s; 
+if (x==3)
+{
+vector<string> pegs{" "," "," "," "," "," "," "," ", " "};
+}  
+else
+{
+ vector<string> pegs{" "," "," "," "," "," "," "," ", " "," "," "," "," "," "," "," "}; 
+}
 }
