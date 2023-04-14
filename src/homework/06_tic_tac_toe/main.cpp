@@ -32,11 +32,19 @@ cout<<" Type 3 for a 3 x 3 grid, or 4 for a 4 X 4 grid \n";
 cin>>s;
 if(s == 4)
 {
-unique_ptr<TicTacToe>&game{};
-TicTacToe_4 &game;
+TicTacToe_4 game;
 
-int grid=3;
-int &s= grid;
+//int grid=4;
+//int &s= grid;
+}
+else
+{
+
+unique_ptr<TicTacToe>&game =make_unique<TicTacToe_3 game>;
+
+//int grid=3;
+//int &s= grid;	
+}
 cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>first_player;
 while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
@@ -46,7 +54,7 @@ while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
     cin>>first_player;
 }
 
-game.start_game(first_player);	// starts play with 1st player choice
+game->start_game(first_player);	// starts play with 1st player choice
 cout<<"First Player entered was an "<< game.get_player()<<endl;
 cout<<game;  //display board using overloaded operatorin tictactoe class
 
@@ -66,7 +74,7 @@ cout<<game; //displays overall game bboard spaces and X's and o's marke, using o
 gover = game->game_over(s);   //checks for game_over is true
 
 
-manage.save_game(game);
+manage.save_game(*game);
 int x; int o; int t;
 manage.get_winner_total(x,o,t);
 cout<<"Winners Tally :: W wins ="<<x<< "  O wins ="<<o << "  Ties ="<<t<<endl;
@@ -82,11 +90,6 @@ gover=false;
 			return 0;
 		}
 }
-
-else
-{
-cout<<" Grid was not marked 3\n";
-}
-}
 return 0;
 }
+
