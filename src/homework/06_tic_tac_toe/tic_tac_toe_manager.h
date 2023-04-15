@@ -12,6 +12,7 @@ using namespace std;
 
 #ifndef TICTACTOEMANAGER_H
 #define TICTACTOEMANAGER_H
+
 class TicTacToeManager
 
 {
@@ -31,14 +32,14 @@ friend ostream& operator<<(ostream& out, TicTacToeManager& manage)
 
 private:
 void update_winner_count(string);
-int x_win;
-int o_win;
-int ties;
-//vector<TicTacToe>games;
+int x_win{};
+int o_win{};
+int ties{};
+
 vector<unique_ptr<TicTacToe>> games;
 
 public:
-void get_winner_total(int&,int&,int&);
+void get_winner_total(int &,int &,int &);
 void save_game(unique_ptr<TicTacToe>&);
 
 

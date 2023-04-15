@@ -12,10 +12,6 @@ using namespace std;
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 
-//int x_win =0; int o_win =0; int ties =0;
-
-
-
 void TicTacToeManager:: save_game(unique_ptr<TicTacToe>&game)
 {
 update_winner_count(game->get_winner());
@@ -24,12 +20,12 @@ get_winner_total(x_win,o_win,ties);
 }
 
 void TicTacToeManager::update_winner_count(string winner)
-{ string winner2 = winner;
-    if (winner2 =="X")
+{ //string winner2 = winner;
+    if (winner =="X")
      {x_win+=1; }
-            if (winner2 =="O")
+            if (winner =="O")
             {o_win+=1; }
-                if (winner2 =="C")
+                if(winner ==" ")
                 {ties+=1; }
 }
 

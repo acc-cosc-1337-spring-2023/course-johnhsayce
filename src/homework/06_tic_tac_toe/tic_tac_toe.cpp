@@ -102,6 +102,8 @@ if(check_board_full()==true)
 winner = "C";
 cout<<"Game Tied"<<endl;
 cout<<"No winner(X or O), the value stored in Winner = "<<winner<<endl;
+winner =" ";   //added clear winner
+return true;  // added missing return
 }
 return false;
 }
@@ -139,19 +141,15 @@ return false;
 void TicTacToe::set_winner()
 {
     if (player=="X")
-    {
-    player="O";
-    }
+    {player="O";}
         else
-        {
-        player="X";   
-        }
+        {player="X";}
 winner=player;
-
 }
+
 string TicTacToe::get_winner()
 {
-return winner;
+ return winner;
 }
 
 
