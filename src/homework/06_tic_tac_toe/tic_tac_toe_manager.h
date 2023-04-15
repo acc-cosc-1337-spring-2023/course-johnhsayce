@@ -24,7 +24,7 @@ friend ostream& operator<<(ostream& out, TicTacToeManager& manage)
            out<<*obj<<"\n"; 
         }
         out<<"Game summary win History"<<endl;
-        out<<"W wins :>>> "<<manage.x_win<<endl;
+        out<<"X wins :>>> "<<manage.x_win<<endl;
         out<<"O wins :>>> "<<manage.o_win<<endl;
         out<<"Ties   :>>> "<<manage.ties<<endl;
         return out;

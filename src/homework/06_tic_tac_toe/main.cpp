@@ -4,6 +4,7 @@
 #include <vector>
 #include<memory>
 #include <cstring>
+#include <climits>
 #include"tic_tac_toe.h"
 #include"tic_tac_toe_manager.h"
 #include"tic_tac_toe_3.h"
@@ -35,6 +36,15 @@ int s;
 cout<<" Enter the type of tic tac toe game you would like \n";
 cout<<" Type 3 for a 3 x 3 grid, or 4 for a 4 X 4 grid \n";
 cin>>s;
+ //validation check for integers(>2 and <5) and strings or char inputs
+while (!(cin && (s>2 && s<5)))
+{
+    cin.clear(); // clear input buffer to restore cin to a usable state
+    cin.ignore(INT_MAX, '\n'); // ignore last input
+    cout<<"Invalid character entered\n";
+    cout<<"Please, Enter a 3 or 4 for grid type\n";
+    cin>>s;  	
+}
 if(s == 4)
 {
 game = make_unique<TicTacToe_4>();			
@@ -49,7 +59,7 @@ cout<<"Enter a capital X or an capital O for initial player"<<endl;
 cin>>first_player;
 while (((first_player!="X")&&(first_player!="O")) ||(cin.fail()))
 {
-    cout<<"Inavlid character entered\n";
+    cout<<"Invalid character entered\n";
     cout<<"Please, Enter a capital X or an capital O for initial player\n";
     cin>>first_player;
 }
@@ -60,7 +70,7 @@ cout<<*game;  //display board using overloaded operatorin tictactoe class
 
 while(gover==false)
 {
-cout<<"Enter grid position (1 thru 9) for 3x3 grid, for Player "<<endl;
+cout<<"Enter grid position (1 thru 9) for 3x3 grid, for Player "<<game->get_player()<<endl;
 cout<<"Enter grid position (1 thru 16) for 4x4 grid, for Player "<<game->get_player()<<endl;
 cout<<"(PROGRAM will EXIT, if any other character is entered)"<<endl;
 cin>>position;
@@ -73,12 +83,12 @@ game->mark_board(position);  // Marks position on game board
 cout<<*game; //displays overall game board spaces and X's and o's marke, using overloaded operator tictactoe
 
 gover = game->game_over();   //checks for game_over is true
-cout<<"Display game over bool"<<gover<<endl;
+//cout<<"Display game over bool"<<gover<<endl;
 }
 manage.save_game(game);
 int x; int o; int t;
 manage.get_winner_total(x,o,t);
-cout<<"Winners Tally :: W wins ="<<x<< "  O wins ="<<o << "  Ties ="<<t<<endl;
+cout<<"Winners Tally :: X wins ="<<x<< "  O wins ="<<o << "  Ties ="<<t<<endl;
 cout<<"Game Over"<<endl;
 
 cout<<"ENTER Y or y to CONTINUE , or enter any other value to exit"<<endl;
