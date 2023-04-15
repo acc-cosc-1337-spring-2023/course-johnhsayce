@@ -81,16 +81,19 @@ bool TicTacToe::game_over()
 bool win_row =check_row_win();
     if (win_row ==true)
     {
+      set_winner();
       return true;  
     }
 bool win_col =check_col_win();
     if (win_col ==true)
     {
-      return true;  
+      set_winner();
+      return true;
     }
 bool win_diag =check_diag_win();
     if (win_diag ==true)
     {
+      set_winner();
       return true;  
     }
 
@@ -174,30 +177,16 @@ for(string& peg: pegs)
   if(peg == " ") 
   {
   full_board = false;
+  return full_board;
   }
-    else
-    {
-    return full_board;
-    }
 }
 return full_board;
 }
 
-
 void TicTacToe::clear_board()
 {
-for(string& peg: pegs) {
-
+for(string& peg: pegs) 
+{
 peg = " ";
-
-/*int x =s; 
-if (x==3)
-{
-vector<string> pegs{" "," "," "," "," "," "," "," ", " "};
-}  
-else
-{
- vector<string> pegs{" "," "," "," "," "," "," "," ", " "," "," "," "," "," "," "," "};
- */ 
 }
 }
