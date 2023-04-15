@@ -23,7 +23,7 @@ games.push_back(std::move(game));
 get_winner_total(x_win,o_win,ties);
 }
 
-void TicTacToeManager::update_winner_count(string winner  )
+void TicTacToeManager::update_winner_count(string winner)
 { string winner2 = winner;
     if (winner2 =="X")
      {x_win+=1; }
