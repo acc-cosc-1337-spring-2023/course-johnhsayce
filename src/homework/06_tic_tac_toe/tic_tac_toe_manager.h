@@ -38,6 +38,7 @@ int ties{};
 
 vector<unique_ptr<TicTacToe>> games;
 
+
 public:
 void get_winner_total(int &,int &,int &);
 void save_game(unique_ptr<TicTacToe>&);
