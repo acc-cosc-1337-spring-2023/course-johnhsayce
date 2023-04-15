@@ -15,9 +15,11 @@ class TicTacToe
 
 {
 
-friend ostream &operator<<(ostream &out, const TicTacToe &game)
-{
-   int i;
+
+friend ostream &operator<<(ostream &out, TicTacToe &game);
+
+ 
+ /*int i;
   cout<<"|";  
     for(i=0;i<3;i++)
     {
@@ -36,18 +38,16 @@ friend ostream &operator<<(ostream &out, const TicTacToe &game)
             cout<<game.pegs[i]<<"|";
             }
             cout<<endl; 
-    
-    return out;
-}
-friend istream &operator>>(istream &in, const TicTacToe &game)
-{
-    return in;
-}
+
+    return out;  */ 
+
+friend istream &operator>>(istream &in, TicTacToe &game);
+
 
 private:
 void set_next_player();
-bool check_board_full(int&);
-void clear_board(int&);
+bool check_board_full();
+void clear_board();
 void set_winner();  // new proto fct check for win
 string player;
 string winner;  // new string var for winner
@@ -60,8 +60,11 @@ vector<string> pegs{};
 
 public:
 int s;
-TicTacToe(int);
-bool game_over(int&);
+TicTacToe() : pegs(9, " ")  {}
+TicTacToe(int size) : pegs(size * size, " ") {}
+
+//TicTacToe(int);
+bool game_over();
 string get_winner();  // new proto fct check for win
 void start_game(string);
 void mark_board(int);

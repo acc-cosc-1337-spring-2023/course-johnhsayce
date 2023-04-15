@@ -15,7 +15,7 @@ using namespace std;
 class TicTacToeManager
 
 {
-friend ostream& operator<<(ostream& out, const TicTacToeManager& manage)
+friend ostream& operator<<(ostream& out, TicTacToeManager& manage)
     {
         out<<"-Final Game History Summary-"<<endl;
         for( auto &obj : manage.games)

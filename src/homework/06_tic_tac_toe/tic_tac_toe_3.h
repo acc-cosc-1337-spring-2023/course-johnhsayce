@@ -14,7 +14,7 @@ using namespace std;
 
 class TicTacToe_3: public TicTacToe
 {
-friend ostream &operator<<(ostream &out, const TicTacToe_3 &game)
+/*friend ostream &operator<<(ostream &out,  TicTacToe_3 &game)
 {
    int i;
   cout<<"|";  
@@ -38,10 +38,11 @@ friend ostream &operator<<(ostream &out, const TicTacToe_3 &game)
     
     return out;
 }
-friend istream &operator>>(istream &in, const TicTacToe_3 &game)
+friend istream &operator>>(istream &in,  TicTacToe_3 &game)
 {
     return in;
-}
+}*/
+
 public:
 TicTacToe_3():TicTacToe(3){}  //contructor which passes 3 to the base and initializes
 private:
