@@ -36,8 +36,7 @@ public:
 int s;
 TicTacToe() : pegs(9, " ")  {}
 TicTacToe(int size) : pegs(size * size, " ") {}
-
-//TicTacToe(int);
+vector<string>get_pegs(); // new proto for getting total pegs output
 bool game_over();
 string get_winner();  // new proto fct check for win
 void start_game(string);

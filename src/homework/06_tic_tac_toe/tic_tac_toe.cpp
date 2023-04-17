@@ -20,6 +20,7 @@ if(game.pegs.size()==16)
     for(i=0;i<4;i++)
     {
     cout<<game.pegs[i]<<"|";
+    
     }
     cout<<endl;
     cout<<"|";
@@ -187,4 +188,8 @@ for(string& peg: pegs)
 {
 peg = " ";
 }
+}
+vector<string>TicTacToe::get_pegs()
+{
+  return pegs;
 }
