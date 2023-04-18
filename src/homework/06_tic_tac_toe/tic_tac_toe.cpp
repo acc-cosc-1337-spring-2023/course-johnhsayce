@@ -1,15 +1,12 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
+#include<stdlib.h>
 #include <vector>
 #include <cstring>
-#include <memory>
 #include"tic_tac_toe.h"
 
 using std::string, std::vector,std::cin, std::cout;
 //using namespace std;
-
-//TicTacToe::TicTacToe(int s):pegs(s*s," "){}  //defined constructor
 
 ostream& operator<<(ostream& out, TicTacToe& game) 
 {

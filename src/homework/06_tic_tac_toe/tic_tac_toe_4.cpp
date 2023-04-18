@@ -1,12 +1,11 @@
-#include "tic_tac_toe_4.h"
 #include <iostream>
 #include <string>
-#include <iomanip>
 #include <vector>
 #include <cstring>
-#include <memory>
+#include <stdlib.h>
 using std::string, std::vector,std::cin, std::cout;
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_4.h"
 
 bool TicTacToe_4::check_row_win()
 {

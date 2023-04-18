@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
 #include <vector>
 #include <cstring>
-#include <memory>
 #include<stdlib.h>
 using std::string, std::vector;
 using namespace std;
@@ -14,10 +12,6 @@ using namespace std;
 class TicTacToe
 
 {
-friend ostream &operator<<(ostream &out, TicTacToe &game);
-
-friend istream &operator>>(istream &in, TicTacToe &game);
-
 private:
 void set_next_player();
 bool check_board_full();
@@ -42,8 +36,9 @@ string get_winner();  // new proto fct check for win
 void start_game(string);
 void mark_board(int);
 string get_player();
-//void display_board ();
+friend ostream &operator<<(ostream &out, TicTacToe &game);
 
+friend istream &operator>>(istream &in, TicTacToe &game);
 
 };
 #endif
