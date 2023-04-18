@@ -44,7 +44,9 @@ friend istream &operator>>(istream &in,  TicTacToe_3 &game)
 }*/
 
 public:
-TicTacToe_3():TicTacToe(3){}  //contructor which passes 3 to the base and initializes
+//TicTacToe_3():TicTacToe(3){}  //contructor which passes 3 to the base and initializes
+TicTacToe_3():TicTacToe(vector<string> p, string w){}
+
 private:
 bool check_row_win();  // new proto fct check for win
 bool check_col_win();   // new proto fct check for win

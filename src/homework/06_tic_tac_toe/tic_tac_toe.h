@@ -30,7 +30,8 @@ vector<string> pegs{};
 public:
 int s;
 TicTacToe() : pegs(9, " ")  {}
-TicTacToe(int size) : pegs(size * size, " ") {}
+TicTacToe(int size) : pegs(size * size, " ") {}   //constructor initialization for pegs vector
+TicTacToe(vector<string> p,string w):pegs(p),winner(w){}  //constructor initialization passing p and w to variables
 vector<string>get_pegs(); // new proto for getting total pegs output
 bool game_over();
 string get_winner();  // new proto fct check for win
@@ -38,7 +39,6 @@ void start_game(string);
 void mark_board(int);
 string get_player();
 friend ostream &operator<<(ostream &out, TicTacToe &game);
-
 friend istream &operator>>(istream &in, TicTacToe &game);
 
 };

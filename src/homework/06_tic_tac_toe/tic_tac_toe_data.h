@@ -22,7 +22,7 @@ void save_games(vector<unique_ptr<TicTacToe>>&games);
 vector<unique_ptr<TicTacToe>> get_games();
 public:
 const string file_name{"tictactoe.dat"};
-void get_data();
+void get_data(&data);
 
 };
 #endif

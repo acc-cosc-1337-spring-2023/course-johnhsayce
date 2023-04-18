@@ -64,6 +64,9 @@ games_input_file.close();
 
 return games;
 }
-
+void get_data(&data)
+{
+    return data;
+}
 
 
