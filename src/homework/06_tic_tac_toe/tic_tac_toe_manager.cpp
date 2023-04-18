@@ -12,7 +12,7 @@ using namespace std;
 #include "tic_tac_toe_4.h"
 #include "tic_tac_toe_data.h"
 
-TicTacToeManager::TicTacToeManager(TicTacToeData d ):data{d}  //constructor for this class
+TicTacToeManager::TicTacToeManager(TicTacToeData):data{d}  //constructor for this class
 {
 games = data.get_games();
 for(auto game:games)

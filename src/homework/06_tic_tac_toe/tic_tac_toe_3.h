@@ -4,8 +4,8 @@
 #include <vector>
 #include <cstring>
 #include <memory>
-#include<stdlib.h>
-#include"tic_tac_toe.h"
+#include <stdlib.h>
+#include "tic_tac_toe.h"
 using std::string, std::vector;
 using namespace std;
 

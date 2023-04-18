@@ -7,6 +7,7 @@ using std::string, std::vector,std::cin, std::cout;
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe.h"
 
+
 bool TicTacToe_3::check_row_win()
 {
     if(((pegs[0]=="X") && (pegs[1] =="X") && (pegs[2] == "X"))||((pegs[0]=="O") && (pegs[1] =="O") && (pegs[2] == "O")) )
