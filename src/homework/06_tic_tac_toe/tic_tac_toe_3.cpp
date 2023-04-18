@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstring>
 #include <stdlib.h>
+#include <memory>
 using std::string, std::vector,std::cin, std::cout;
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe.h"

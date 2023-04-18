@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cstring>
+#include <memory>
 #include <stdlib.h>
 using std::string, std::vector,std::cin, std::cout;
 #include "tic_tac_toe.h"

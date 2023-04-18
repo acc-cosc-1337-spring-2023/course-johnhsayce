@@ -2,7 +2,8 @@
 #include <string>
 #include <vector>
 #include <cstring>
-#include<stdlib.h>
+#include <stdlib.h>
+#include <memory>
 using std::string, std::vector;
 using namespace std;
 

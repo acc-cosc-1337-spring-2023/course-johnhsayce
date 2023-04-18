@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <vector>
+#include <memory>
 #include <cstring>
 #include"tic_tac_toe.h"
 

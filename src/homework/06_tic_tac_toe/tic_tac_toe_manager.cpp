@@ -3,6 +3,7 @@
 #include <vector>
 #include <cstring>
 #include <stdlib.h>
+#include <memory>
 using std::string, std::vector, std::cin, std::cout;
 using namespace std;
 

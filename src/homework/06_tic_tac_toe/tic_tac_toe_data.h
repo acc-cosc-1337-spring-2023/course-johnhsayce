@@ -7,6 +7,7 @@
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
+#include <memory>
 #include <fstream>
 using std::string, std::vector;
 using namespace std;
