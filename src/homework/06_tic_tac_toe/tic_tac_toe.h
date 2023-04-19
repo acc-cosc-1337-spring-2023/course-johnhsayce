@@ -29,9 +29,9 @@ vector<string> pegs{};
 
 public:
 int s;
-TicTacToe() : pegs(9, " ")  {}
+//TicTacToe() : pegs(9, " ")  {}
 TicTacToe(int size) : pegs(size * size, " ") {}   //constructor initialization for pegs vector
-TicTacToe(vector<string> p,string w):pegs(p),winner(w){}  //constructor initialization passing p and w to variables
+TicTacToe(string w, vector<string> p):winner(w),pegs(p){}  //constructor initialization passing p and w to variables
 vector<string>get_pegs(); // new proto for getting total pegs output
 bool game_over();
 string get_winner();  // new proto fct check for win

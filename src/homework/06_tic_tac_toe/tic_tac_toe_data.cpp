@@ -16,21 +16,21 @@ using namespace std;
 void TicTacToeData :: save_games(vector<unique_ptr<TicTacToe>>&games)
 {
 fstream games_output_file;
-games_output_file.open(file_name);
+games_output_file.open(file_name);   // reads ext file file_name
 if(games_output_file.is_open())
 {
     for (auto &game : games)
     {
-        for(auto &peg: game-> get_pegs())
-        games_output_file<<peg;
+        for(auto &peg: game-> get_pegs())    // outputs peg vector 
+        games_output_file<<peg;    
     }
-        games_output_file<<game->get_winner();
-        games_output_file<<endl;
+        games_output_file<<game->get_winner();  //outputs winner
+        games_output_file<<"\n";
 }
-games_output_file.close();
+games_output_file.close();       //close file
 }
 
-vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
+vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()   // read game results from file tictacttoe.txt
 {
 vector<unique_ptr<TicTacToe>>games;
 fstream games_input_file;
@@ -44,10 +44,10 @@ if(games_input_file.is_open())
      {   
         for(size_t i=0; i < (line_result.size()-1);++i) 
         {
-            string ch (1,line_result[i]);  // not sure , need  to complete
+            string ch (1,line_result[i]);  /
             pegs.push_back(ch);
         }
-    string winner {line_result[line_result.size()-1]};
+    string winner {line_result[line_result.size()-1]};  // gets winner of game using last item in vector
     unique_ptr<TicTacToe> game;
     if(pegs.size() ==9)
     {
@@ -57,16 +57,13 @@ if(games_input_file.is_open())
         {
         game = make_unique<TicTacToe_4>(pegs,winner); 
         }
-    games.push_back(move(game)); // not sure , need  to complete
+    games.push_back(move(game)); // pushes game reulst into games
     }
 }
 games_input_file.close();
 
 return games;
 }
-void get_data(&data)
-{
-    return data;
-}
+
 
 

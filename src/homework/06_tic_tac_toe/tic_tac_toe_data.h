@@ -21,8 +21,7 @@ private:
 void save_games(vector<unique_ptr<TicTacToe>>&games);
 vector<unique_ptr<TicTacToe>> get_games();
 public:
-const string file_name{"tictactoe.dat"};
-void get_data(&data);
+const string file_name{"tictactoe.txt"};
 
 };
 #endif

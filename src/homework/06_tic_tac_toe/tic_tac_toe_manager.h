@@ -18,7 +18,7 @@ class TicTacToeManager
 
 {
 private:
-void update_winner_count(string);
+void update_winner_count(string winner);
 int x_win{};
 int o_win{};
 int ties{};
