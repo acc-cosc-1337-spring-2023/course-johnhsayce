@@ -49,8 +49,9 @@ friend istream &operator>>(istream &in, TicTacToe_4 &game);
 }*/
 
 public:
-//TicTacToe_4():TicTacToe(4){}  //contructor which passes 4 to the base and initializes
-TicTacToe_4():TicTacToe( (winner = " "),(pegs[16]) ){}
+TicTacToe_4():TicTacToe(4){}  //contructor which passes 4 to the base and initializes
+TicTacToe_4(std::vector<string> p, string winner):TicTacToe(p, winner ){}
+
 private:
 bool check_row_win();  // new proto fct check for win
 bool check_col_win();   // new proto fct check for win

@@ -45,7 +45,7 @@ friend istream &operator>>(istream &in,  TicTacToe_3 &game)
 
 public:
 TicTacToe_3():TicTacToe(3){}  //contructor which passes 3 to the base and initializes
-TicTacToe_3():TicTacToe( string " ", vector<string> 9){}
+TicTacToe_3(std::vector<string> p, string winner):TicTacToe(p, winner ){}
 
 private:
 bool check_row_win();  // new proto fct check for win

@@ -28,7 +28,8 @@ vector<unique_ptr<TicTacToe>> games;
 public:
 void get_winner_total(int &,int &,int &);
 void save_game(unique_ptr<TicTacToe>&);
-TicTacToeManager(TicTacToeData data);
+TicTacToeManager:TicTacToeManager()= default;         //?? what is this
+TicTacToeManager(TicTacToeData &data);
 ~TicTacToeManager();
 friend ostream& operator<<(ostream& out, TicTacToeManager& manage)
     {
