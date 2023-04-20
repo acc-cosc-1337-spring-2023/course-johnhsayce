@@ -1,14 +1,26 @@
-/*
-use a vector of int with values 8, 4, 20, 88, 66, 99
+//program which gets DNA data and  processes it a specifc way
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <cstring>
+using std::string, std::cout, std::cin, std::endl;
 
-Prompt user for 1 for Get Max from vector and 2 for Get primes.
-Prompt user for a number and return max value or list of primes
-and display them to screen.
-Program continues until user decides to exit.
+//prototype functions
+double get_gc_content(const std::string &dna);
+std::string get_dna_complement(std::string dna);
+std::string reverse_string(std:: string dna);
+void menu(int menu_select);
 
-*/
+
 int main() 
 {
+	string dna;
+	string reverse_dna;
+	string rev_complement;
+	int menu_select=1;
+	
+	menu(menu_select);
 
 	return 0;
 }
