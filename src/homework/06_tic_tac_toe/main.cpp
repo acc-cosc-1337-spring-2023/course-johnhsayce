@@ -17,12 +17,12 @@ using namespace std;
 int main() 
 {
 
-//TicTacToeData data;
+TicTacToeData data;
 
 unique_ptr <TicTacToe> game;
 
-TicTacToeManager manage;  // define class object for TTT manager
-//TicTacToeManager( &data);
+//TicTacToeManager manage;  // define class object for TTT manager
+TicTacToeManager manage( data);
 bool gover;  // game over variable
 string first_player;
 int position; //peg postion
