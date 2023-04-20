@@ -34,7 +34,7 @@ TicTacToe(int size) : pegs(size * size, " ") {}   //constructor initialization f
 TicTacToe( vector<string> p, string w):pegs(p),winner(w){}  //constructor initialization passing p and w to variables
 vector<string>get_pegs(); // new proto for getting total pegs output
 bool game_over();
-string get_winner();  // new proto fct check for win
+string get_winner(); 
 void start_game(string);
 void mark_board(int);
 string get_player();

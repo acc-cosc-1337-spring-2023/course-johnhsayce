@@ -13,16 +13,16 @@ using namespace std;
 #include "tic_tac_toe_4.h"
 #include "tic_tac_toe_data.h"
 
-TicTacToeManager::TicTacToeManager(TicTacToeData &data) //constructor for this class
+TicTacToeManager::TicTacToeManager(TicTacToeData &data)//constructor for this class
 {
-games = data.get_games();
-for(auto game:games)
-{
- update_winner_account(game->get_winner());   
+games =data.get_games();
+    for(auto &game:games)
+    {
+    update_winner_count(game->get_winner());   
+    }
+
 }
 
-
-}
 
 void TicTacToeManager:: save_game(unique_ptr<TicTacToe>&game)
 {
@@ -46,10 +46,8 @@ void TicTacToeManager::get_winner_total(int &x,int &o, int &t)
 x=x_win;
 o=o_win;
 t=ties;
-
-//cout<<"Win Tally :: ";
-//cout<<"X wins = "<< x_win<<"  "<< "O wins = "<<o_win<<"  "<<"Ties = "<<ties<<endl;
 }
+
 TicTacToeManager::~TicTacToeManager()
 {
    data.save_games(games); 
